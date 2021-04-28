@@ -7,6 +7,3 @@ seaborn
 fortran-compiler  #for pysolid
 scikit-learn      #for bootstrap method in ts2vel
 rich              #for rich terminal output
-# unwrap_error
-pyfftw
-

@@ -23,32 +23,9 @@ export PATH=${PATH}:${ARIATOOLS_HOME}/bin
 export PATH=${PATH}:${TOOL_DIR}/utils/SSARA
 
 ##-------------- ISCE2 --------------------------------##
-use_isce_conda=1  # 0 for source (on kamb), 1 for conda (on laptop)
-
-if [ $use_isce_conda -eq 1 ]; then
-    # >>> conda >>>
-    # ISCE_HOME/STACK are set by conda
-    export PATH=${PATH}:${ISCE_HOME}/bin:${ISCE_HOME}/applications
-    echo "load ISCE-2 core modules installed by conda at "$ISCE_HOME
-
-else
-    # >>> build from source >>>
-    # load required modules for compiling ISCE-2
-    module load cuda/11.2
-    module load /home/geomod/apps/rhel7/modules/gcc/7.3.1
-    #module load /home/geomod/apps/rhel7/modules/python3/anaconda
-
-    export ISCE_ROOT=~/tools/isce2
-    export ISCE_HOME=${ISCE_ROOT}/install/packages/isce
-    echo "load ISCE-2 core modules from "$ISCE_HOME
-
-    export PATH=${PATH}:${ISCE_ROOT}/install/bin
-    export PYTHONPATH=${PYTHONPATH}:${ISCE_ROOT}/install/packages
-    #export LD_LIBRARY=${LD_LIBRARY}:${ISCE_ROOT}/install/lib
-
-    # load isce2 core module with GPU support installed by Lijun
-    #alias load_isce_gpu='echo "load ISCE-2 compiled with GPU support"; source /home/geomod/apps/rhel7/isce2.rc'
-fi
+# ISCE_HOME/STACK are set by conda
+export PATH=${PATH}:${ISCE_HOME}/bin:${ISCE_HOME}/applications
+echo "load ISCE-2 core modules installed by conda at "$ISCE_HOME
 
 # common settings (source stack processors and PyCuAmpcor)
 export ISCE_STACK=${TOOL_DIR}/isce2/src/isce2/contrib/stack                     #set ISCE_STACK to the dev version
