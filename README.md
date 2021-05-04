@@ -23,7 +23,7 @@ conda config --add channels conda-forge
 conda install wget git tree --yes
 ```
 
-### 2. Install ISCE-2, ARIA-tools and MintPy to `insar` environment
+### 2. Install ATBD, ISCE-2, ARIA-tools and MintPy to `insar` environment
 
 #### Download source code
 
@@ -34,11 +34,12 @@ mkdir build install src; cd src
 git clone https://github.com/isce-framework/isce2.git
 
 cd ~/tools
+git clone https://github.com/nisar-solid/conda_envs.git
+git clone https://github.com/nisar-solid/ATBD.git
+git clone https://github.com/aria-tools/ARIA-tools.git
 git clone https://github.com/insarlab/MintPy.git
 git clone https://github.com/insarlab/PySolid.git
-git clone https://github.com/aria-tools/ARIA-tools.git
 git clone https://github.com/yunjunz/PyAPS.git
-git clone https://github.com/nisar-solid/conda_envs.git
 ```
 
 #### Create `insar` environment and install pre-requisites
@@ -49,7 +50,7 @@ conda create --name insar
 conda activate insar
 
 # install dependencies with conda
-conda install --yes --file conda_envs/insar/requirements.txt --file MintPy/docs/conda.txt --file ARIA-tools/requirements.txt isce2 
+conda install --yes --file ATBD/docs/requirements.txt --file MintPy/docs/conda.txt --file ARIA-tools/requirements.txt isce2 
 
 # install dependencies not available from conda
 ln -s ${CONDA_PREFIX}/bin/cython ${CONDA_PREFIX}/bin/cython3
