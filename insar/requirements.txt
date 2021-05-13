@@ -1,9 +1,0 @@
-gmt
-jupyterlab<3.0
-jupyter_nbextensions_configurator
-nbdime
-seaborn
-# mintpy
-fortran-compiler  #for pysolid
-scikit-learn      #for bootstrap method in ts2vel
-rich              #for rich terminal output
