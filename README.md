@@ -2,6 +2,8 @@
 
 Setup InSAR data processing codes on Linux / macOS.
 
+NOTE: Archive this repo because its content has been merged into `nisar-solid/ATBD/docs/installation.md`.
+
 ### 1. Install conda
 
 ```bash
